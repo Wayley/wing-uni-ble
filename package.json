@@ -1,0 +1,36 @@
+{
+  "name": "wing-uni-ble",
+  "version": "0.0.1",
+  "description": "wing ble",
+  "keywords": [
+    "Bluetooth",
+    "Bluetooth Low Energy"
+  ],
+  "types": "./dist/index.d.ts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.es.js",
+  "unpkg": "./dist/index.umd.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.cjs.js",
+      "browser": "./dist/index.umd.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@dcloudio/types": "^3.4.8",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "rollup-plugin-dts": "^6.1.1",
+    "tslib": "^2.6.2"
+  },
+  "dependencies": {
+    "@wing-uni/bluetooth": "^0.0.2",
+    "@wing-uni/bluetooth-low-energy": "^0.0.1",
+    "wing-sequence": "^0.0.2"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+		"moduleResolution":"Bundler",
+    "types": ["@dcloudio/types" ]
+  },
+  "include": ["**/*.ts", "**/*.d.ts"]
+}
