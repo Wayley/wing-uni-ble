@@ -1,6 +1,6 @@
 {
   "name": "wing-uni-ble",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "wing ble",
   "keywords": [
     "Bluetooth",
@@ -8,7 +8,7 @@
   ],
   "types": "./dist/index.d.ts",
   "main": "./dist/index.js",
-  "module": "./dist/index.es.js",
+  "module": "./dist/index.esm.js",
   "unpkg": "./dist/index.umd.js",
   "exports": {
     ".": {

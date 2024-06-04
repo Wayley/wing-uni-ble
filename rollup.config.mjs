@@ -14,7 +14,7 @@ export default [
     output: [
       { file: `dist/index.amd.js`, format: 'amd' },
       { file: `dist/index.cjs.js`, format: 'cjs' },
-      { file: `dist/index.es.js`, format: 'es' },
+      { file: `dist/index.esm.js`, format: 'es' },
       { file: `dist/index.js`, format: 'es' },
       { file: `dist/index.iife.js`, format: 'iife', name },
       { file: `dist/index.umd.js`, format: 'umd', name },
