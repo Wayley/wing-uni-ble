@@ -15,7 +15,7 @@ export type BluetoothLowEnergyConfig = {
   serviceId?: string;
   readUUID?: string;
   writeUUID?: string;
-  notifuUUID?: string;
+  notifyUUID?: string;
 };
 export type MTU = {
   iosMTU: number;
@@ -26,7 +26,7 @@ export type DeviceConfig = {
   serviceId: string;
   readUUID: string;
   writeUUID: string;
-  notifuUUID: string;
+  notifyUUID: string;
 };
 export class Bluetooth {
   private static instance: Bluetooth | null = null;
@@ -169,7 +169,7 @@ export class BluetoothLowEnergy {
   }
   onValueChange(callback: (value: ArrayBuffer) => void, serviceId?: string, characteristicId?: string): void {
     serviceId = serviceId ?? this.config.serviceId;
-    characteristicId = characteristicId ?? this.config.writeUUID;
+    characteristicId = characteristicId ?? this.config.notifyUUID;
     this.uniBle.onBLECharacteristicValueChange(({ deviceId, ...rest }) => {
       if (deviceId != this.config.deviceId || (serviceId && serviceId != rest.serviceId) || (characteristicId && characteristicId != rest.characteristicId)) {
         return;
@@ -180,7 +180,7 @@ export class BluetoothLowEnergy {
   //
   notify(serviceId?: string, characteristicId?: string, state?: boolean): Promise<BluetoothResponse<null>> {
     serviceId = serviceId ?? this.config.serviceId ?? '';
-    characteristicId = characteristicId ?? this.config.readUUID ?? '';
+    characteristicId = characteristicId ?? this.config.notifyUUID ?? '';
     state = state ?? true;
     let options = { deviceId: this.config.deviceId, serviceId, characteristicId, state };
     return this.uniBle.notifyBLECharacteristicValueChange(options);
